@@ -1,0 +1,7 @@
+Please note that the F1 command to save in pcf format is
+not really setup correctly right now.  Now, it saves a vga.pcf
+file, with the name vga inside.  You can change the filename,
+or edit the file with a good editor, such as vi or vim, and
+change the identifier.  That way, you could use it in X,
+without overwriting your current vga.pcf.  Please note that
+the identifier inside vga.pcf will only support 3 characters.

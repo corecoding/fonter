@@ -1,0 +1,13 @@
+Well here is my big whoppen TODO list.  Neato eh?
+
+o  I plan to make this program fully NCURSES compatable in the future.
+   Right now, it pretty much depends on ANSI control codes...
+
+o  Make the font editor window use background colors for the block instead
+   of actual characters, because, well it would just be better :)
+
+o  Enable support for different formats of saving, .com, .h, etc.
+
+o  Fix the (i) information problem, when in something other than 80x25.
+
+o  Fix the (2) loading command with filenames with spaces

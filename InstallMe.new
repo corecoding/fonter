@@ -1,0 +1,103 @@
+#!/bin/sh
+#
+# Script for installing Fonter
+#
+
+if [ $# -ne 1 ]; then
+echo "This program is not intended for external use."
+echo "Please type make."
+exit
+fi
+
+#Change what you want below
+#Compiler
+CC="gcc"
+#CC="cc"
+
+#Compile options and libraries
+CFLAGS="-s -O6 -DLINUX -DNCURSES"
+#CFLAGS="-s -O -g -Wall -DLINUX -DNCURSES"
+
+LIBS="-lncurses"
+NAME="fonter"
+LNAME="fonter-1.8"
+
+# DO NOT CHANGE ANYTHING BELOW THIS LINE.
+
+FONTS="/usr/local/fonterfonts"
+BIN="/usr/local/bin"
+
+if [ "$1" = "CONFIG" ]; then
+echo "Welcome to the [1m$LNAME[0m installation program."
+echo -n "What path do you want the fonter bin in [$BIN]: "
+read A
+if [ "$A" = "" ]; then
+A=$BIN;
+fi
+
+echo -n "What path do you want the fonts in [$FONTS]: "
+read B
+if [ "$B" = "" ]; then
+B=$FONTS;
+fi
+`echo $A > CONFIG`
+`echo $B >> CONFIG`
+
+echo -n "Does [1m$A[0m exist...";
+if [ -d "$A" ]; then
+echo "Yes!";
+else
+echo "No, so I am creating it.";
+mkdir $A
+fi
+
+echo -n "Does [1m$B[0m exist...";
+if [ -d "$B" ]; then
+echo "Yes!"
+else
+echo "No, so I am creating it.";
+mkdir $B
+fi
+
+echo
+echo "Configuration is now complete.  If you wish to install fonter,"
+echo "please type [1mmake install[0m.  Remember.  Fonter will"
+echo "uninstall just fine, if you specify the same dirs upon installing"
+echo "when your erasing it.  Run [1mmake uninstall[0m to erase fonter."
+echo
+exit
+fi
+
+if [ ! -f ./CONFIG ]; then
+echo "Please type [1mmake config[0m first.";
+exit;
+fi
+
+if [ "$1" = "TIME" ]; then
+echo "Creating time file..."
+echo "#define COMP \"`date`\"" > inc/compiled.h
+fi
+
+if [ "$1" = "INSTALL" ]; then
+FONTS=`tail -n 1 CONFIG`
+BIN=`head -n 1 CONFIG`
+echo
+echo
+echo "     the fonter binary location    : $BIN"
+echo "     the fonts directory           : $FONTS"
+echo
+echo -n "If the settings are correct, please type [1myes[0m: "
+read A
+if [ "$A" != "yes" ]; then
+echo "You didn't type 'yes', so I am assuming you don't want to continue."
+exit
+fi
+echo "#define FONTDIR \"$FONTS/\"" > inc/fontdir.h
+echo "#################### Now compiling Fonter! ####################"
+$CC $CFLAGS -c $NAME.c
+$CC $CFLAGS -o $NAME $NAME.o $LIBS
+strip $NAME
+echo "################ Compiling of fonter complete! ################"
+cp fonter $BIN
+cp -a fonts/* $FONTS
+fi

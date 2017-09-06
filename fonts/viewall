@@ -1,0 +1,21 @@
+#!/bin/sh
+clear
+echo "This script will now rotate through all the fonts"
+echo "in this directory.  Hit [1mCtrl-C[0m to quit, and type"
+echo "[1msetfont[0m to reset your font to the default."
+echo -n "Waiting 5 seconds"
+
+for i in 1 2 3 4 5; do sleep 1; echo -n "."; done
+
+echo "Done!"
+echo
+
+while true; do
+
+for i in *; do
+ echo "Setting font to $i, and waiting 5 seconds..."
+ setfont $i &>/dev/null
+ sleep 5
+done
+
+done

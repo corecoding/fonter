@@ -1,0 +1,5 @@
+Here are a list of few bugs, which may not be my programs fault:
+
+o  I've had a report of the whole screen flickering when you toggle a fonts
+   pixel on or off.  This is probally a problem of your video card not liking
+   the ioctl font controlling codes.  Does it flicker when you type setfont?

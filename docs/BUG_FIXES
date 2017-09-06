@@ -1,0 +1,8 @@
+*	Fonts with a filename longer than 14 characters,
+        would crash fonter.  This has been fixed.
+
+*	Page Up/Page Down in the File listing for loading
+	a font has been significantly optimized.
+
+*	Checking wether you are in X or not, so fonter won't
+	mess up if you are in X.
