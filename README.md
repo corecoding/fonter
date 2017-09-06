@@ -11,7 +11,7 @@ Fonter v1.8 - The new generation of font manipulation.  Since there were
   font.  There is  *NO WARRANTY* with this program btw..  Which means I am in no
   way responsable for anything that happens.
 
-  If you have any questions, please contact me at roler@primenet.com.
+  If you have any questions, please contact me via GitHub.
 
   For installation, just type 'make' and enjoy.  This program currently does
   not support 'make install', which it most likely will in the future.  Sorry
