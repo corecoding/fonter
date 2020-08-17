@@ -442,8 +442,8 @@ void endprog()
 
 void error(char *er)
 {
-	printf("Error - %s\n", er);
 	endwin();
+	printf("Error - %s\n", er);
 	exit(1);
 }
 
@@ -708,11 +708,11 @@ void updateboxes()
 		printz((buf[(i * 32) + (barY - 1)] & arr[barX - 1])
 		       ? "%Y" : "%R");
 
-		mvprintz(barY + 7, barX * 2, "ÛÛ");
+		mvprintz(barY + 7, barX * 2, "Ã›Ã›");
 
 		printz((buf[(i * 32) + (obY - 1)] & arr[obX - 1]) ? "%b" : "%k");
 
-		mvprintz(obY + 7, obX * 2, "ÛÛ");
+		mvprintz(obY + 7, obX * 2, "Ã›Ã›");
 
 		if (!COL)
 			enlarge(i);
@@ -815,14 +815,14 @@ void enlarge(int charnum)
 			cnt++;
 			mod /= 2;
 			move_to(i + 8, cnt * 2);
-			printf("%s", (num & mod) ? "ÛÛ" : "  ");
+			printf("%s", (num & mod) ? "Ã›Ã›" : "  ");
 		}
 	}
 
 	printz((buf[(charnum * 32) + (barY - 1)] & arr[barX - 1])
 	       ? "%Y" : "%R");
 
-	mvprintz(barY + 7, barX * 2, "ÛÛ");
+	mvprintz(barY + 7, barX * 2, "Ã›Ã›");
 
 	refresh();
 }
@@ -997,15 +997,15 @@ void status(char *str)
 void asciido()
 {
 	if (ASC) {
-		Asc[0] = "Ú";
-		Asc[1] = "¿";
-		Asc[2] = "À";
-		Asc[3] = "Ù";
-		Asc[4] = "Ä";
-		Asc[5] = "³";
-		Asc[6] = "Õ";
-		Asc[7] = "¸";
-		Asc[8] = "Í";
+		Asc[0] = "Ãš";
+		Asc[1] = "Â¿";
+		Asc[2] = "Ã€";
+		Asc[3] = "Ã™";
+		Asc[4] = "Ã„";
+		Asc[5] = "Â³";
+		Asc[6] = "Ã•";
+		Asc[7] = "Â¸";
+		Asc[8] = "Ã";
 	} else {
 		Asc[0] = ".";
 		Asc[1] = ".";
@@ -1222,7 +1222,7 @@ void filemenu()
 		case 'Q':
 		case 27:
 			status("Loading cancelled");
-			mvprintz(24, 2, "%KÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+			mvprintz(24, 2, "%KÃ„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„");
 			mvprintz(7, 7, "%0%GEditor");
 			i = (cnY * 16) + cnX;
 			enlarge(i);
@@ -1246,7 +1246,7 @@ void filemenu()
 					printf(" ");
 			setfont();
 			getfont();
-			mvprintz(24, 2, "%KÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+			mvprintz(24, 2, "%KÃ„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„");
 			mvprintz(7, 7, "%0%GEditor");
 			i = (cnY * 16) + cnX;
 			enlarge(i);
@@ -1357,12 +1357,12 @@ void filemenu()
 		if ((cnt - 16) > countah) {
 			mvprintz(24, 15, "%w");
 		} else {
-			mvprintz(24, 15, "%0%KÄ");
+			mvprintz(24, 15, "%0%KÃ„");
 		}
 		if (countah > 0) {
 			mvprintz(24, 14, "%w");
 		} else {
-			mvprintz(24, 14, "%0%KÄ");
+			mvprintz(24, 14, "%0%KÃ„");
 		}
 
 		mvprintz(24, 3, "%w");
