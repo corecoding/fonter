@@ -1,25 +1,59 @@
-Fonter v1.8 - The new generation of font manipulation.  Since there were
-  basically no universal font editors out there for linux (I only found two),
-  I decided to write this one.  I hope that all the deluxe features that this
-  program offers, help you to create some fantastic console fonts.  Let me
-  stress that this is my FIRST C program of any OS.  So if the code is hard to
-  read, or what have you, please do not tell me about it.  This program is
-  modeled almost exactly the same as my MS-DOS font editor, which I created
-  some time ago.  If you would like a copy of it, please email me.  The only
-  code that I semi copied was from the setfont source.  I had to look
-  at that code to figure out how the ioctl commands work to change the console
-  font.  There is  *NO WARRANTY* with this program btw..  Which means I am in no
-  way responsable for anything that happens.
+# Fonter
 
-  If you have any questions, please contact me via GitHub.
+Linux console font editor and changer — a text-mode (ncurses) bitmap font editor for VGA console fonts. Written in 1998 as my first C program, modeled after an earlier MS-DOS font editor I wrote in Pascal.
 
-  For installation, just type 'make' and enjoy.  This program currently does
-  not support 'make install', which it most likely will in the future.  Sorry
-  :(.
+> Back when BBSs were the craze, swapping your console font was half the fun — easier on the eyes for long sessions, and a chance to give the screen a unique look.
 
-  Please read the files in the docs/ directory also.  At least read the COPYRIGHT
-  and FONT_CREDITS file.  Thank you.  If you don't read those files, it will not 
-  protect you in any way.
+## Screenshots
 
-Happy Fonting,
+### Main screen
+
+Pixel editor on the left, full 256-character table in the center, and key bindings on the right.
+
+![Fonter main screen — editor, character table, and first help pane](screenshots/fonter1.png)
+
+### Second help screen
+
+Additional editing commands (restore, shrink, scoot, jump, and more).
+
+![Fonter second help screen](screenshots/fonter2.png)
+
+## Features
+
+- Save and load `.fnt` files; save `.pcf` fonts for X
+- Clear, inverse, and flip characters on X/Y
+- Copy and paste characters
+- Restore the original font page or current character
+- Shrink and scoot characters left/right/up/down
+- Jump to a character by index
+- Live console font updates via ioctl (inspired by `setfont`)
+
+## Build
+
+```bash
+make
+```
+
+Run from a Linux virtual console (not under X/Wayland). Options:
+
+```text
+fonter [OPTIONS]...
+
+  -n    Skip color detection at startup
+  -a    Don't use high ASCII, just low
+  -f    Don't use fading effects
+  -s    Don't update characters immediately (not advised)
+  -c    Don't use colors
+  -d    Print last revision date
+  -h    Help
+```
+
+See `docs/` for copyright, font credits, known bugs, and notes. There is **no warranty**.
+
+## Links
+
+- Product page: https://corecoding.com/products/fonter
+- Portfolio notes: https://www.christophermonahan.com/index.php?goto=portfolio/linux-fonter/
+
+Happy Fonting,  
 Chris
