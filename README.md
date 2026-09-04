@@ -50,10 +50,5 @@ fonter [OPTIONS]...
 
 See `docs/` for copyright, font credits, known bugs, and notes. There is **no warranty**.
 
-## Links
-
-- Product page: https://corecoding.com/products/fonter
-- Portfolio notes: https://www.christophermonahan.com/index.php?goto=portfolio/linux-fonter/
-
 Happy Fonting,  
 Chris
