@@ -10,13 +10,13 @@ Linux console font editor and changer — a text-mode (ncurses) bitmap font edit
 
 Pixel editor on the left, full 256-character table in the center, and key bindings on the right.
 
-![Fonter main screen — editor, character table, and first help pane](https://raw.githubusercontent.com/corecoding/fonter/screenshots/fonter1.png)
+![Fonter main screen — editor, character table, and first help pane](https://raw.githubusercontent.com/corecoding/fonter/main/screenshots/fonter1.png)
 
 ### Second help screen
 
 Additional editing commands (restore, shrink, scoot, jump, and more).
 
-![Fonter second help screen](https://raw.githubusercontent.com/corecoding/fonter/screenshots/fonter2.png)
+![Fonter second help screen](https://raw.githubusercontent.com/corecoding/fonter/main/screenshots/fonter2.png)
 
 ## Features
 
